@@ -24,3 +24,12 @@ variable "alarm_description" {
     default = "This metric monitors ec2 cpu utilization"
 }
 
+variable "status_alarm_description" {
+    default = "This metric monitors ec2 health status"
+}
+
+variable "status_alarm_name" {}
+
+variable "status_alarm_metric" {}
+
+variable "status_alarm_threshold" {}

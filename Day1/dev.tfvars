@@ -19,3 +19,9 @@ period = "300"
 statistic = "Average"
 
 threshold = "30"
+
+status_alarm_name = "instance-health-check"
+
+status_alarm_metric = "StatusCheckFailed"
+
+status_alarm_threshold = "1"

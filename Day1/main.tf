@@ -26,3 +26,19 @@ resource "aws_cloudwatch_metric_alarm" "cpu_utilization" {
     InstanceId = "${data.aws_instance.test_ec2.id}"
   }
 }
+
+resource "aws_cloudwatch_metric_alarm" "instance-health-check" {
+  alarm_name                = var.status_alarm_name
+  comparison_operator       = var.c_operator
+  evaluation_periods        = var.evaluation_periods
+  metric_name               = var.status_alarm_metric
+  namespace                 = var.namespace
+  period                    = var.period
+  statistic                 = var.statistic
+  threshold                 = var.status_alarm_threshold
+  alarm_description         = var.status_alarm_description
+  alarm_actions             = [ "${data.aws_sns_topic.test_topic.arn}" ]
+  dimensions                = {
+    InstanceId = "${data.aws_instance.test_ec2.id}"
+  }
+}

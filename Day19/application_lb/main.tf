@@ -5,7 +5,7 @@ resource "aws_lb" "lb" {
   ip_address_type    = "ipv4"
   subnets            = ["${var.subnet_id1}", "${var.subnet_id2}"]
 
-  enable_deletion_protection = false
+  enable_deletion_protection = true
 
   tags = {
     Name = var.lb_name

@@ -9,11 +9,11 @@ variable "instance_count" {}
 variable "instance_type" {}
 
 variable "security_group_ids" {
-    type = list
+  type = list(any)
 }
 
 variable "subnet_mask" {
-    type = list
+  type = list(any)
 }
 
 variable "instance_name" {}

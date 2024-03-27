@@ -1,12 +1,16 @@
 pipeline {
     agent any
+
+    tools {
+        terraform "terraform-1.0.8"
+    }
     
     parameters {
         string(name: 'WORKSPACE', defaultValue: 'development', description: 'Set up workspace for Terraform')
     }
     
     environment {
-        TF_HOME = tool name: 'terraform-0.11.8', type: 'terraform'
+        TF_HOME = tool name: 'terraform-1.0.8', type: 'terraform'
         PATH = "${env.TF_HOME}/bin:$PATH"
         TF_IN_AUTOMATION = "true"
         ACCESS_KEY = credentials('AWS_ACCESS_KEY_ID')

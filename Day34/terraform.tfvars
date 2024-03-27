@@ -8,7 +8,7 @@ instance_count = 2
 
 instance_type = "t2.micro"
 
-instance_name = "test-ec2"
+instance_name = "test"
 
 security_group_ids = ["sg-0124449141091cfa1","sg-082ef07dcd070761b"]
 

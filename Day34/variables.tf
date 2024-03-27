@@ -17,3 +17,7 @@ variable "subnet_mask" {
 }
 
 variable "instance_name" {}
+
+variable "access_key" {}
+
+variable "secret_key" {}

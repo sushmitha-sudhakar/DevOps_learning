@@ -34,7 +34,6 @@ resource "aws_instance" "test_instance" {
   key_name               = aws_key_pair.test-key.id
   vpc_security_group_ids = var.security_group_ids
   subnet_id              = element(var.subnet_mask, count.index)
-  user_data              = data.template_file.user-init.rendered
 
   tags = {
     Name = "${var.instance_name}.${count.index + 1}"

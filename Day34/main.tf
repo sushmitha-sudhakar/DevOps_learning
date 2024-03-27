@@ -1,6 +1,3 @@
-# Query all avilable Availibility Zone
-data "aws_availability_zones" "available" {}
-
 # To get the latest Centos7 AMI
 data "aws_ami" "ami" {
   owners      = ["amazon"]

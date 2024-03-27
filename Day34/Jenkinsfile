@@ -71,7 +71,7 @@ pipeline {
                          currentBuild.result = 'UNSTABLE'
                     }
                     if(apply){
-                        dir('/'){
+                        dir('Day34/'){
                             unstash "terraform-plan"
                             sh 'terraform apply terraform.tfplan'
                         }

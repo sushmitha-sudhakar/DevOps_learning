@@ -25,14 +25,13 @@ resource "aws_key_pair" "test-key" {
 }
 
 resource "aws_instance" "test_instance" {
-  count                  = var.instance_count
   ami                    = data.aws_ami.ami.id
   instance_type          = var.instance_type
   key_name               = aws_key_pair.test-key.id
   vpc_security_group_ids = var.security_group_ids
-  subnet_id              = element(var.subnet_mask, count.index)
+  subnet_id              = var.subnet_id
 
   tags = {
-    Name = "${var.instance_name}.${count.index + 1}"
+    Name = var.instance_name
   }
 }

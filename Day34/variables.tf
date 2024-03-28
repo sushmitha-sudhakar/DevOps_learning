@@ -12,12 +12,10 @@ variable "security_group_ids" {
   type = list(any)
 }
 
-variable "subnet_mask" {
-  type = list(any)
-}
-
 variable "instance_name" {}
 
 variable "access_key" {}
 
 variable "secret_key" {}
+
+variable "subnet_id" {}

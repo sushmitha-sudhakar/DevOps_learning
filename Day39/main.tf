@@ -19,3 +19,21 @@ resource "aws_vpc_endpoint" "ec2logs"{
 POLICY
   private_dns_enabled = true
 }
+
+resource "aws_vpc_endpoint" "s3" {
+  vpc_id          = var.vpc_id
+  service_name    = var.gateway_service_name
+  route_table_ids = [var.route_table]
+  policy = <<POLICY
+{
+    "Statement": [
+        {
+            "Action": "*",
+            "Effect": "Allow",
+            "Resource": "*",
+            "Principal": "*"
+        }
+    ]
+}
+POLICY
+}
